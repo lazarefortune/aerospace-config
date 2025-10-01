@@ -1,0 +1,118 @@
+# AeroSpace configuration — AZERTY, sans conflits navigateurs
+
+# --- Général ---
+start-at-login = true
+# Layout par défaut = grille
+default-root-container-layout = 'tiles'
+# Orientation auto selon l’écran (horizontal sur écran large, vertical sur écran “portrait”)
+default-root-container-orientation = 'auto'
+
+# Petits conforts
+enable-normalization-flatten-containers = true
+enable-normalization-opposite-orientation-for-nested-containers = true
+accordion-padding = 30
+on-focused-monitor-changed = ['move-mouse monitor-lazy-center']
+automatically-unhide-macos-hidden-apps = false
+
+after-startup-command = [
+  'exec-and-forget borders active_color=0xff2f6af6 inactive_color=0xff3a3a3a width=4.0'
+]
+
+# Mapping clavier (laisse 'qwerty' pour que les flèches/chiffres restent stables)
+[key-mapping]
+preset = 'qwerty'
+
+# --- Gaps (marges) ---
+[gaps]
+inner.horizontal = 10
+inner.vertical   = 10
+outer.left       = 5
+outer.right      = 5
+outer.top        = 5
+outer.bottom     = 5
+
+# --- Raccourcis principaux ---
+[mode.main.binding]
+# Focus entre fenêtres
+cmd-left  = 'focus left'
+cmd-right = 'focus right'
+cmd-up    = 'focus up'
+cmd-down  = 'focus down'
+
+# Déplacer la fenêtre
+cmd-shift-left  = 'move left'
+cmd-shift-right = 'move right'
+cmd-shift-up    = 'move up'
+cmd-shift-down  = 'move down'
+
+# Layouts (tiles = grille, accordion = pile, floating = fenêtre libre)
+alt-t = 'layout tiles'
+alt-a = 'layout accordion'
+alt-f = 'layout floating tiling'   # toggle flottant <-> tiling
+
+# --- Workspaces (rangée chiffres + pavé num) ---
+# Chiffres en haut
+ctrl-1 = 'workspace 1'
+ctrl-2 = 'workspace 2'
+ctrl-3 = 'workspace 3'
+ctrl-4 = 'workspace 4'
+ctrl-5 = 'workspace 5'
+ctrl-6 = 'workspace 6'
+ctrl-7 = 'workspace 7'
+ctrl-8 = 'workspace 8'
+ctrl-9 = 'workspace 9'
+ctrl-0 = 'workspace 10'
+
+ctrl-shift-1 = 'move-node-to-workspace 1 --focus-follows-window'
+ctrl-shift-2 = 'move-node-to-workspace 2 --focus-follows-window'
+ctrl-shift-3 = 'move-node-to-workspace 3 --focus-follows-window'
+ctrl-shift-4 = 'move-node-to-workspace 4 --focus-follows-window'
+ctrl-shift-5 = 'move-node-to-workspace 5 --focus-follows-window'
+ctrl-shift-6 = 'move-node-to-workspace 6 --focus-follows-window'
+ctrl-shift-7 = 'move-node-to-workspace 7 --focus-follows-window'
+ctrl-shift-8 = 'move-node-to-workspace 8 --focus-follows-window'
+ctrl-shift-9 = 'move-node-to-workspace 9 --focus-follows-window'
+ctrl-shift-0 = 'move-node-to-workspace 10 --focus-follows-window'
+
+# --- Workspaces avec le pavé numérique ---
+ctrl-keypad1 = 'workspace 1'
+ctrl-keypad2 = 'workspace 2'
+ctrl-keypad3 = 'workspace 3'
+ctrl-keypad4 = 'workspace 4'
+ctrl-keypad5 = 'workspace 5'
+ctrl-keypad6 = 'workspace 6'
+ctrl-keypad7 = 'workspace 7'
+ctrl-keypad8 = 'workspace 8'
+ctrl-keypad9 = 'workspace 9'
+ctrl-keypad0 = 'workspace 10'
+
+ctrl-shift-keypad1 = 'move-node-to-workspace 1 --focus-follows-window'
+ctrl-shift-keypad2 = 'move-node-to-workspace 2 --focus-follows-window'
+ctrl-shift-keypad3 = 'move-node-to-workspace 3 --focus-follows-window'
+ctrl-shift-keypad4 = 'move-node-to-workspace 4 --focus-follows-window'
+ctrl-shift-keypad5 = 'move-node-to-workspace 5 --focus-follows-window'
+ctrl-shift-keypad6 = 'move-node-to-workspace 6 --focus-follows-window'
+ctrl-shift-keypad7 = 'move-node-to-workspace 7 --focus-follows-window'
+ctrl-shift-keypad8 = 'move-node-to-workspace 8 --focus-follows-window'
+ctrl-shift-keypad9 = 'move-node-to-workspace 9 --focus-follows-window'
+ctrl-shift-keypad0 = 'move-node-to-workspace 10 --focus-follows-window'
+
+# Reload rapide de la conf
+cmd-alt-r = 'reload-config'
+
+# --- Règles auto (bundle IDs exacts) ---
+[[on-window-detected]]
+if.app-id = 'com.jetbrains.PhpStorm'
+run = ['move-node-to-workspace 1 --focus-follows-window']
+
+[[on-window-detected]]
+if.app-id = 'com.github.wez.wezterm'
+run = ['move-node-to-workspace 2 --focus-follows-window']
+
+[[on-window-detected]]
+if.app-id = 'com.brave.Browser'
+run = ['move-node-to-workspace 3 --focus-follows-window']
+
+[[on-window-detected]]
+if.app-id = 'com.microsoft.VSCode'
+run = ['move-node-to-workspace 1 --focus-follows-window']
